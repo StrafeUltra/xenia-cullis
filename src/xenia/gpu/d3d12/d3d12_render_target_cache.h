@@ -233,6 +233,25 @@ class D3D12RenderTargetCache final : public RenderTargetCache {
   ID3D12PipelineState* resolve_copy_native_pipelines_[size_t(
       draw_util::ResolveCopyShaderIndex::kCount)] = {};
 
+  // Resolution-scaled resolve -> 1x downsample for CPU readback.
+  // Reads the current scaled resolve range (SRV) and writes nearest-neighbor 1x
+  // bytes into shared memory (UAV) so resolve results reach guest RAM at >1x.
+  // Parameter 0 - draw_util::ResolveCopyShaderConstants (dest_base is the 1x
+  //               guest destination base).
+  // Parameter 1 - destination (shared memory).
+  // Parameter 2 - source (current scaled resolve range).
+  // Indexed by bytes-per-block log2 (0..4 for 8/16/32/64/128bpp).
+  static constexpr size_t kResolveDownsampleShaderCount = 5;
+  ID3D12RootSignature* resolve_downsample_root_signature_ = nullptr;
+  struct ResolveDownsampleShaderCode {
+    const void* code;
+    size_t size;
+  };
+  static const ResolveDownsampleShaderCode
+      kResolveDownsampleShaders[kResolveDownsampleShaderCount];
+  ID3D12PipelineState*
+      resolve_downsample_pipelines_[kResolveDownsampleShaderCount] = {};
+
   // For traces.
   ID3D12Resource* edram_snapshot_download_buffer_ = nullptr;
   std::unique_ptr<ui::d3d12::D3D12UploadBufferPool>

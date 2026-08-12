@@ -20,10 +20,10 @@
 #include "xenia/cpu/ppc/ppc_context.h"
 #include "xenia/cpu/processor.h"
 DEFINE_bool(
-    elide_e0_check, false,
+    elide_e0_check, true,
     "Eliminate e0 check on some memory accesses, like to r13(tls) or r1(sp)",
     "CPU");
-DEFINE_bool(enable_rmw_context_merging, false,
+DEFINE_bool(enable_rmw_context_merging, true,
             "Permit merging read-modify-write HIR instr sequences together "
             "into x86 instructions that use a memory operand.",
             "x64");

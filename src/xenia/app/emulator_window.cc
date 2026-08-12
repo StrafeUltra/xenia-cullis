@@ -71,7 +71,7 @@ DEFINE_bool(controller_hotkeys, false, "Hotkeys for Xbox and PS controllers.",
             "General");
 
 DEFINE_string(
-    postprocess_antialiasing, "",
+    postprocess_antialiasing, "fxaa",
     "Post-processing anti-aliasing effect to apply to the image output of the "
     "game.\n"
     "Using post-process anti-aliasing is heavily recommended when AMD "
@@ -88,7 +88,7 @@ DEFINE_string(
     "(39).",
     "Display");
 DEFINE_string(
-    postprocess_scaling_and_sharpening, "",
+    postprocess_scaling_and_sharpening, "cas",
     "Post-processing effect to use for resampling and/or sharpening of the "
     "final display output.\n"
     "Use: [bilinear, cas, fsr]\n"
@@ -167,7 +167,7 @@ using namespace xe::hid;
 using namespace xe::gpu;
 
 constexpr std::string_view kRecentlyPlayedTitlesFilename = "recent.toml";
-constexpr std::string_view kBaseTitle = "Xenia-canary";
+constexpr std::string_view kBaseTitle = "Xenia-Cullis";
 
 EmulatorWindow::EmulatorWindow(Emulator* emulator,
                                ui::WindowedAppContext& app_context,

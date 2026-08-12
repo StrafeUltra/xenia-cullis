@@ -161,7 +161,7 @@ DEFINE_uint32(
     "Host render targets only.",
     "GPU");
 DEFINE_bool(
-    gamma_render_target_as_unorm16, true,
+    gamma_render_target_as_unorm16, false,
     "When the host can't write 8 bits per component pixels with piecewise "
     "linear gamma encoding directly with correct blending, use the 16-bit "
     "unsigned normalized format, if supported, for conceptually correct "

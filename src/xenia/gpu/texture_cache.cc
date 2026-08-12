@@ -18,7 +18,7 @@
 #include "xenia/gpu/shared_memory.h"
 
 DEFINE_int32(
-    draw_resolution_scale_x, 1,
+    draw_resolution_scale_x, 2,
     "Integer pixel width scale used for scaling the rendering resolution "
     "opaquely to the game.\n"
     "Values from 1 to 7 may be supported, depending on device capabilities. "
@@ -31,7 +31,7 @@ DEFINE_int32(
     "MSAA isn't used) becomes full-pixel.",
     "GPU");
 DEFINE_int32(
-    draw_resolution_scale_y, 1,
+    draw_resolution_scale_y, 2,
     "Integer pixel width scale used for scaling the rendering resolution "
     "opaquely to the game.\n"
     "See draw_resolution_scale_x for more information.",
@@ -52,7 +52,7 @@ DEFINE_uint32(
     "will be destroyed as soon as possible.",
     "GPU.Debug");
 DEFINE_uint32(
-    texture_cache_memory_limit_render_to_texture, 24,
+    texture_cache_memory_limit_render_to_texture, 64,
     "Part of the host texture memory budget (in megabytes) that will be scaled "
     "by the current drawing resolution scale.\n"
     "If texture_cache_memory_limit_soft, for instance, is 384, and this is 24, "

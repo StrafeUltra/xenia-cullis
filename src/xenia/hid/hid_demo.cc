@@ -45,7 +45,7 @@
 #include "xenia/hid/xinput/xinput_hid.h"
 #endif  // XE_PLATFORM_WIN32
 
-DEFINE_string(hid, "any", "Input system. Use: [any, nop, sdl, winkey, xinput]",
+DEFINE_string(hid, "sdl", "Input system. Use: [any, nop, sdl, winkey, xinput]",
               "General");
 
 #define MAX_USERS 4

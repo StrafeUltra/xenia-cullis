@@ -87,7 +87,7 @@ DEFINE_double(
     "Values around 0.90 are a good starting point for subtle tuning.",
     "GPU");
 
-DEFINE_int32(anisotropic_override, -1,
+DEFINE_int32(anisotropic_override, 5,
              "Forces anisotropic filtering (AF) for eligible textures.\n"
              "Higher values keep textures sharper at oblique angles at the "
              "cost of GPU bandwidth, though most GPUs handle up to 16x fine.\n"
