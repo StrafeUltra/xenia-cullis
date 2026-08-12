@@ -14,8 +14,8 @@ This fork aims to bring performance focused improvements (especially around expe
 
 In addition to those optimizations, experimental options will be added over time to try improving areas where the emulator still falls short.
 
-The longterm goal is to keep the fork usable with the full range of games so that a single build can be used instead of maintaining multiple versions.
-That said, development focus will likely center on out of the box compatability with a smaller set of titles.
+The long-term goal is to keep the fork usable with the full range of games so that a single build can be used instead of maintaining multiple versions.
+That said, development focus will likely center on out-of-the box compatibility with a smaller set of titles.
 
 ## Changes
 
@@ -30,7 +30,7 @@ legally purchased devices and games and information made public on the internet
 (you'd be surprised what's indexed on Google...).
 
 This fork is based on Xenia / Xenia Canary and remains under the original 3-Clause BSD license.
-Large parts of the performance related work (particularly around readback resolve) originated from Gummi's fork and were integrated here: https://github.com/StrafeUltra/xenia-cullis/commit/18516638bee068960fcc8d49f28d08f354951767
+Large parts of the performance-related work (particularly around readback resolve) originated from Gummi's fork and were integrated here: https://github.com/StrafeUltra/xenia-cullis/commit/18516638bee068960fcc8d49f28d08f354951767
 Credit for that work belongs to Gummi.
 
 Any original contributions I make to this fork are also released under the same 3-Clause BSD license.

@@ -40,19 +40,19 @@ jobs:
   # ===========================================================================
   build-windows:
     name: Windows (x86-64)
-    needs: [lint, commit-message]
+    needs: [lint]
     if: ${{ !failure() && !cancelled() }}
     uses: ./.github/workflows/Windows_x86.yml
 
-  build-linux:
-    name: Linux (x86-64)
-    needs: [lint, commit-message]
-    if: ${{ !failure() && !cancelled() }}
-    uses: ./.github/workflows/Linux_x86.yml
-    with:
-      runs-on: ${{ needs.lint.outputs.runs-on }}
-      llvm_version: ${{ needs.lint.outputs.llvm_version }}
-      ubuntu_base: ${{ needs.lint.outputs.ubuntu_base }}
+ # build-linux:
+ #   name: Linux (x86-64)
+ #   needs: [lint, commit-message]
+ #   if: ${{ !failure() && !cancelled() }}
+ #   uses: ./.github/workflows/Linux_x86.yml
+ #   with:
+ #     runs-on: ${{ needs.lint.outputs.runs-on }}
+ #     llvm_version: ${{ needs.lint.outputs.llvm_version }}
+ #     ubuntu_base: ${{ needs.lint.outputs.ubuntu_base }}
 
   # Uncomment when platform support is ready:
   # build-windows-arm64:
@@ -80,13 +80,13 @@ jobs:
   # ===========================================================================
   release:
     name: Create Release
-    needs: [build-windows, build-linux]
+    needs: [build-windows]
     if: |-
       always() &&
-      github.repository == 'xenia-canary/xenia-canary' &&
+      github.repository == 'StrafeUltra/xenia-cullis' &&
       github.event_name == 'push' &&
       github.ref == 'refs/heads/canary_experimental' &&
-      (needs.build-windows.result == 'success' && needs.build-linux.result == 'success')
+      (needs.build-windows.result == 'success')
     uses: ./.github/workflows/Create_release.yml
     permissions:
       contents: write
