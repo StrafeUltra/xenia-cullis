@@ -1,70 +1,25 @@
 <p align="center">
-    <a href="https://github.com/xenia-canary/xenia-canary/tree/canary_experimental/assets/icon">
-        <img height="256px" src="https://raw.githubusercontent.com/xenia-canary/xenia/master/assets/icon/256.png" />
+    <a href="https://github.com/StrafeUltra/xenia-cullis/tree/canary_experimental/assets/icon">
+        <img height="256px" src="https://raw.githubusercontent.com/StrafeUltra/xenia-cullis/refs/heads/canary_experimental/assets/icon/icon.ico" />
     </a>
 </p>
 
-<h1 align="center">Xenia Canary - Xbox 360 Emulator</h1>
+<h1 align="center">Xenia Cullis</h1>
 
-Xenia Canary is an experimental fork of the Xenia emulator. For more information, see the
-[Xenia Canary wiki](https://github.com/xenia-canary/xenia-canary/wiki).
+Xenia Cullis is an experimental fork of Xenia Canary.
 
-Come chat with us about **emulator-related topics** on [Discord](https://discord.gg/Q9mxZf9).
-For developer chat join `#dev` but stay on topic. Lurking is not only fine, but encouraged!
-Please check the [FAQ](https://github.com/xenia-canary/xenia-canary/wiki/FAQ) page before asking questions.
-We've got jobs/lives/etc, so don't expect instant answers.
+## Goals
 
-Discussing illegal activities will get you banned.
+This fork aims to bring performance focused improvements (especially around expensive options such as readback resolve) while staying as up to date as possible with upstream Xenia Canary.
 
-## Status
+In addition to those optimizations, experimental options will be added over time to try improving areas where the emulator still falls short.
 
-Buildbot | Status | Releases
--------- | ------ | --------
-Canary (🪟, 🐧) | [![CI](https://github.com/xenia-canary/xenia-canary/actions/workflows/Orchestrator.yml/badge.svg?branch=canary_experimental)](https://github.com/xenia-canary/xenia-canary/actions/workflows/Orchestrator.yml/badge.svg?branch=canary_experimental) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/cd506034fd8148309a45034925648499)](https://app.codacy.com/gh/xenia-canary/xenia-canary/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) | [Latest](https://github.com/xenia-canary/xenia-canary/releases/latest) ◦ [All](https://github.com/xenia-canary/xenia-canary/releases) ◦ [Old](https://github.com/xenia-canary/xenia-canary-releases/releases)
+The longterm goal is to keep the fork usable with the full range of games so that a single build can be used instead of maintaining multiple versions.
+That said, development focus will likely center on out of the box compatability with a smaller set of titles.
 
-### Experimental Netplay
+## Changes
 
-Buildbot | Status | Releases
--------- | ------ | --------
-Windows | [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d814c4b6aa444dcc9c1631e0224b2739)](https://app.codacy.com/gh/AdrianCassar/xenia-canary/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) | [Latest](https://github.com/AdrianCassar/xenia-canary/releases/latest)
-
-## Quickstart
-
-See the [Quickstart](https://github.com/xenia-canary/xenia-canary/wiki/Quickstart) page.
-
-## FAQ
-
-See the [frequently asked questions](https://github.com/xenia-canary/xenia-canary/wiki/FAQ) page.
-
-## Game Compatibility
-
-See the [Game compatibility list](https://github.com/xenia-canary/game-compatibility/issues)
-for currently tracked games, and feel free to contribute your own updates,
-screenshots, and information there following the [existing conventions](https://github.com/xenia-canary/game-compatibility/blob/canary/README.md).
-
-## Building
-
-See [building.md](docs/building.md) for setup and information about the
-`xb` script. When writing code, check the [style guide](docs/style_guide.md)
-and be sure to run clang-format!
-
-## Contributors Wanted!
-
-Have some spare time, know advanced C++, and want to write an emulator?
-Contribute! There's a ton of work that needs to be done, a lot of which
-is wide open greenfield fun.
-
-**For general rules and guidelines please see [CONTRIBUTING.md](.github/CONTRIBUTING.md).**
-
-Fixes and optimizations are always welcome (please!), but in addition to
-that there are some major work areas still untouched:
-
-* Help work through [missing functionality/bugs in games](https://github.com/xenia-canary/xenia-canary/labels/compat)
-* Reduce the size of Xenia's [huge log files](https://github.com/xenia-canary/xenia-canary/issues/1526)
-* Skilled with Linux? A strong contributor is needed to [help with porting](https://github.com/xenia-canary/xenia-canary/labels/platform-linux)
-
-See more projects [good for contributors](https://github.com/xenia-canary/xenia-canary/labels/good%20first%20issue). It's a good idea to ask on Discord and check the issues page before beginning work on
-something.
+A detailed list of the default setting changes in this fork can be found in [CHANGES.md](CHANGES.md).
 
 ## Disclaimer
 
@@ -73,3 +28,9 @@ of emulation of modern devices and operating systems. **It is not for enabling
 illegal activity**. All information is obtained via reverse engineering of
 legally purchased devices and games and information made public on the internet
 (you'd be surprised what's indexed on Google...).
+
+This fork is based on Xenia / Xenia Canary and remains under the original 3-Clause BSD license.
+Large parts of the performance related work (particularly around readback resolve) originated from Gummi's fork and were integrated here: https://github.com/StrafeUltra/xenia-cullis/commit/18516638bee068960fcc8d49f28d08f354951767
+Credit for that work belongs to Gummi.
+
+Any original contributions I make to this fork are also released under the same 3-Clause BSD license.
